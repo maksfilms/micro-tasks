@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer" //sdfs
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const onclickHandler = (name: string) => {
+        console.log(name)
+    }
+
+    return (
+        <div className="App">
+            <button onClick={(event) => onclickHandler('Bob')}>MyYouTubeChannel-1</button>
+            <button onClick={(event) => onclickHandler("Alex")}>MyYouTubeChannel-2</button>
+        </div>
+    );
 }
 
 export default App;
