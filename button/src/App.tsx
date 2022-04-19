@@ -1,18 +1,24 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {Button} from "./components/Button";
+
+
 
 function App() {
-    const onclickHandler = (name: string) => {
-        console.log(name)
+    const myFunc = (address: string, age: number, friend: string) => {
+        console.log(address, age, friend)
+    }
+    const myFunc2 = () => {
+        console.log('Bob')
     }
 
     return (
-        <div className="App">
-            <button onClick={(event) => onclickHandler('Bob')}>MyYouTubeChannel-1</button>
-            <button onClick={(event) => onclickHandler("Alex")}>MyYouTubeChannel-2</button>
+        <div>
+            <Button name={"YouTubeChannel-1"} callBack={() => myFunc('Minsk', 21, 'Bob')}/>
+            <Button name={"YouTubeChannel-1"} callBack={myFunc2}/>
         </div>
-    );
-}
 
+    )
+
+}
 export default App;
