@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import "./App.css";
 
-
 type FilterType = "all" | 'dollars' | 'ruble';
+
+
 
 function App() {
 
@@ -17,7 +18,6 @@ function App() {
         {banknots: "dollars", value: 50, number: " x1234567890"},
         {banknots: "ruble", value: 50, number: " v1234567890"},
     ])
-
 
     const [filter, setFilter] = useState<FilterType>("all")
 

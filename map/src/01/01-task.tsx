@@ -1,16 +1,10 @@
 import React from "react";
 import "../App.css"
 
-export const topCars = [
-    {manufacturer: "BMW", model: "m5cs"},
-    {manufacturer: "Mercedes", model: "e63s"},
-    {manufacturer: "Audi", model: "rs6"}
-]
-
-type MyCarsProps = {
-    cars: Array<CarsType>
+export type MyCarsProps = {
+    topCars: Array<CarsType>
 }
-type CarsType = {
+export type CarsType = {
     manufacturer: string
     model: string
 }
@@ -18,18 +12,23 @@ type CarsType = {
 
 export function MyCars(props: MyCarsProps) {
     return (
-        <div>
-            {props.cars.map((carObject, index) => {
-            return (
-                <li>
-                    <ul key={index}>{carObject.manufacturer}</ul>
-                    <ul key={index}>{carObject.model}</ul>
-                </li>
-            )
-        })}
-        </div>
+        <>
+            {props.topCars.map((e, i) =>
+                <table>
+                    <tr>
+                        <th>{i + 1}</th>
+                    </tr>
+                    <tr>
+                        <td>{e.manufacturer}</td>
+                    </tr>
+                    <tr>
+                        <td>{e.model}</td>
+                    </tr>
+                </table>)}
+        </>
     )
 }
+
 ///
 
 
