@@ -1,6 +1,8 @@
-import React, {MouseEventHandler, useState} from "react";
+import React, {useState} from "react";
 import "./App.css";
 import {Fullinput} from "./components/Fullinput";
+import {Input} from "./components/Input";
+import {Button} from "./components/Button";
 
 
 
@@ -14,13 +16,22 @@ function App() {
         ]
     )
 
+    let [title, setTitle] = useState("")
+
     let addMessage = (title: string) => {
        setMessage([{message: title}, ...message])
+    }
+    const callBackButtonHandler = () => {
+        addMessage(title)
+        setTitle('')
     }
 
     return (
         <div className="App">
-            <Fullinput addMessage={addMessage}/>
+            {/*<Fullinput addMessage={addMessage}/>*/}
+
+            <Input title={title} setTitle={setTitle}/>
+            <Button name={'+'} callBack={callBackButtonHandler}/>
 
             {message.map((el, index) => {
                 return (
